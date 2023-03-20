@@ -1,0 +1,5 @@
+# Please see folders 1-12 and 1-13 for the updated Dockerfiles
+
+$ sudo docker run -p 127.0.0.1:8080:8080 devops-backend
+$ sudo docker run -p 127.0.0.1:5000:5000 devops-frontend
+

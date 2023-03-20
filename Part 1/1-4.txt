@@ -1,0 +1,9 @@
+sudo docker run -d -it --rm --name curler ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+
+sudo docker exec -it curler bash
+apt update
+apt install curl
+
+# In a separate terminal
+sudo docker attach curler
+helsinki.fi
