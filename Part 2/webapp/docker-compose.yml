@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+    front:
+      image: front
+      build:
+        context: ./frontend
+        dockerfile: Dockerfile
+      ports:
+        - 5000
+      command: ["serve", "-s", "-l", "5000", "build"]
+    back:
+      image: back
+      build: 
+        context: ./backend
+        dockerfile: Dockerfile
+      ports:
+        - 8080
+      environment: 
+        - REQUEST_ORIGIN=http://localhost
+        - REDIS_HOST=redis
+        - POSTGRES_HOST=db
+        - POSTGRES_PASSWORD=example
+        - POSTGRES_DATABASE=postgres
+      command: ["./server"]
+    redis:
+      image: redis:latest
+    db:
+      image: postgres
+      restart: unless-stopped
+      environment:
+        - POSTGRES_PASSWORD=example
+      container_name: postgres_db
+      volumes:
+      - ./database:/var/lib/postgresql/data
+    reverse-proxy:
+      image: nginx
+      volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      ports:
+      - "80:80"
+

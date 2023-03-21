@@ -1,0 +1,16 @@
+FROM node:16
+
+WORKDIR /usr/src/app
+
+EXPOSE 5000
+
+# Dockerfile run in the root folder of the repository
+COPY . .
+
+RUN npm install
+
+RUN npm install -g serve
+
+RUN REACT_APP_BACKEND_URL=http://localhost/api npm run build
+
+CMD ["serve", "-s", "-l", "5000", "build"]
