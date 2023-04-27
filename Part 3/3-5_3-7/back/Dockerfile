@@ -1,4 +1,4 @@
-FROM golang:1.16
+FROM golang:1.16-alpine3.15
 
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ COPY . .
 ENV REQUEST_ORIGIN=http://localhost:5000
 
 RUN go build && \
-  adduser appuser
+  adduser -D appuser
 
 USER appuser
 

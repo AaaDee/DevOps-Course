@@ -7,3 +7,8 @@ After 3-6:
 
 back                                         latest    a40424a72fdb   31 seconds ago   1.07GB
 front                                        latest    b13a310a4aa6   4 minutes ago    1.08GB
+
+After 3-7:
+
+back                                         latest    32b4b3975700   24 seconds ago   447MB
+front                                        latest    d71a990fdd55   4 minutes ago    187MB

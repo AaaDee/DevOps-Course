@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16.3.0-alpine
 
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN npm install && \
   npm install -g serve && \
   REACT_APP_BACKEND_URL=http://localhost:8080 npm run build && \
-  useradd -m appuser && \
+  adduser -D appuser && \
   rm -rf node_modules
 
 USER appuser
