@@ -1,0 +1,9 @@
+At start:
+
+back                                         latest    4c3a14ee65a7   3 hours ago     1.07GB
+front                                        latest    88dcb8ddd7b8   3 hours ago     1.26GB
+
+After 3-6:
+
+back                                         latest    a40424a72fdb   31 seconds ago   1.07GB
+front                                        latest    b13a310a4aa6   4 minutes ago    1.08GB
